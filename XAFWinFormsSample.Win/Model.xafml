@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Logo="ExpressAppLogo">
+  <BOModel>
+    <Class Name="XAFWinFormsSample.Module.BusinessObjects.Database.BRAND" Caption="" ImageName="BO_Price" ObjectCaptionFormat="" />
+    <Class Name="XAFWinFormsSample.Module.BusinessObjects.Database.KIND_OF_PACKING" Caption="Kind Of Products" ImageName="ShipmentReceived" />
+    <Class Name="XAFWinFormsSample.Module.BusinessObjects.Database.SUPPLIER" Caption="Suppliers" ImageName="Shopping_Delivery" ObjectCaptionFormat="" />
+  </BOModel>
+  <NavigationItems NavigationStyle="Accordion" ShowImages="True" DefaultChildItemsDisplayStyle="List" />
+  <Options UIType="TabbedMDI" FormStyle="Ribbon" ShowTabImage="False">
+    <LayoutManagerOptions EnableLayoutGroupImages="False" />
+  </Options>
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="18.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SystemWindowsFormsModule" Version="18.2.3.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <ListView Id="BRAND_ListView" IsGroupPanelVisible="True" Caption="Brands" MasterDetailMode="ListViewOnly" AutoExpandAllGroups="True">
+      <Columns>
+        <ColumnInfo Id="ID_SUPPLIER" GroupIndex="1" Caption="Supplier" />
+        <ColumnInfo Id="DSC_BRAND" Caption="Brand description" />
+      </Columns>
+    </ListView>
+    <DetailView Id="KIND_OF_PACKING_DetailView" Caption="Kind Of Packing">
+      <Items>
+        <PropertyEditor Id="DEPTH" Caption="Depth" />
+        <PropertyEditor Id="DSC_KIND_OF_PACKING" Caption="Kind of packing description" />
+        <PropertyEditor Id="HEIGHT" Caption="Height" DisplayFormat="{0:N4}" EditMask="" />
+        <PropertyEditor Id="ID_KIND_OF_PACKING" Caption="Id" />
+        <PropertyEditor Id="WEIGHT" Caption="Weight" />
+        <PropertyEditor Id="WIDTH" Caption="Width" DisplayFormat="" />
+      </Items>
+    </DetailView>
+    <ListView Id="KIND_OF_PACKING_ListView" Caption="Kind Of Packing">
+      <Columns>
+        <ColumnInfo Id="DSC_KIND_OF_PACKING" Caption="Kind of packing description" />
+        <ColumnInfo Id="HEIGHT" Caption="Heigth" DisplayFormat="{0:N4}" EditMask="" />
+        <ColumnInfo Id="WIDTH" Caption="Width" DisplayFormat="{0:N4}" EditMask="" />
+        <ColumnInfo Id="DEPTH" Caption="Depth" DisplayFormat="{0.0000:N}" EditMask="" />
+        <ColumnInfo Id="WEIGHT" Caption="Weight" />
+      </Columns>
+    </ListView>
+    <DetailView Id="SUPPLIER_DetailView">
+      <Items>
+        <PropertyEditor Id="DSC_SUPPLIER" Caption="Supplier name" />
+      </Items>
+    </DetailView>
+    <ListView Id="SUPPLIER_ListView">
+      <Columns>
+        <ColumnInfo Id="DSC_SUPPLIER" Caption="Suppliers name" />
+        <ColumnInfo Id="DATE_OF_REGISTER" Caption="Date of register" />
+      </Columns>
+    </ListView>
+  </Views>
+</Application>
